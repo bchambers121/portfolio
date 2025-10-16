@@ -11,7 +11,8 @@
       background-color: #f4f5f7;
       color: #222;
       line-height: 1.6;
-      /* Fade-in animation for page load */
+    }
+    /* Fade-in animation for page load */
 body {
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
@@ -21,7 +22,6 @@ body.fade-in {
   opacity: 1;
 }
 
-    }
 
     /* NAVIGATION */
     header {
@@ -48,6 +48,7 @@ body.fade-in {
   border-bottom: 2px solid #000;  /* adds a small underline to show it’s active */
   padding-bottom: 4px;     /* adds space for the underline */
 }
+
 
     /* HERO SECTION */
     .hero {
@@ -117,7 +118,7 @@ body.fade-in {
 
     /* CONTACT SECTION */
     .contact {
-      max-width: 1250px;
+      max-width: 800px;
       margin: 120px auto;
       text-align: left;
       padding: 0 20px;
@@ -159,7 +160,7 @@ body.fade-in {
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1250px) {
+    @media (max-width: 850px) {
       .project {
         flex-direction: column;
         text-align: center;
@@ -180,60 +181,20 @@ body.fade-in {
   </style>
 </head>
 <body>
-    <header>
+   <header>
   <div class="logo">B.</div>
   <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About Me</a>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About Me</a>
     <a href="resume.html">CV</a>
     <a href="contact.html">Contact</a>
   </nav>
 </header>
 
   <section class="hero">
-    <h1>Hey there!</h1>
-    <p>I’m Brady, a second-year Digital Design student currently studying at <B>Ulster University in Belfast.</B>I’m passionate about crafting fluent and engaging user experiences that focus on meaningful, accessible interactions. My aim is to design with impact, creating solutions that consider all users, especially those who may face everyday challenges.</p>
-  </section>
-
-  <section class="projects">
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1200" alt="Project mockup 1" />
-      <div class="project-text">
-        <h3>WheelNav</h3>
-        <p>A smartwatch navigation app designed to assist wheelchair users in safer and more efficient travel routes.</p>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1587613755200-8c1d1cc7da3a?q=80&w=1200" alt="Project mockup 2" />
-      <div class="project-text">
-        <h3>Motion Studio</h3>
-        <p>An experimental interface focused on motion design principles to enhance engagement in digital storytelling.</p>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200" alt="Project mockup 3" />
-      <div class="project-text">
-        <h3>Flow Design</h3>
-        <p>A conceptual redesign project exploring minimal user flows and rapid usability testing processes.</p>
-      </div>
-    </div>
-
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200" alt="Project mockup 4" />
-      <div class="project-text">
-        <h3>Brand Refresh</h3>
-        <p>Identity and brand direction update for a small creative agency, focusing on modular visual systems.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact">
-    <span>👋 Get in touch at</span>
-    <h2>brady.design@email.com</h2>
-    <a href="mailto:brady.design@email.com" class="button">Contact Me</a>
-  </section>
+  <h1>About Me</h1>
+  <p>I'm Brady Chambers, a digital design student passionate about crafting clean, meaningful, and accessible digital experiences. I focus on user-centred thinking, visual storytelling, and motion design principles that enhance how people engage with products and interfaces.</p>
+</section>
 
   <footer>
     <nav>
