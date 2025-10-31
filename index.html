@@ -1,15 +1,96 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bradychambersdesign</title>
   <style>
+
+/* Scroll button styling */
+.scroll-button {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #FFAAAA, #96A9FF);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: linear-gradient(135deg, #FFAAAA, #96A9FF); /* your accent grey */
+  transform: translateY(-3px); /* lifts slightly on hover */
+}
+
+    /* Default project style */
+.project {
+  transition: transform 0.6s ease, filter 0.4s ease, opacity 0.4s ease;
+  transform: scale(1);
+  filter: blur(0);
+  opacity: 1;
+}
+
+/* The project currently in view */
+.project.active {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+/* Blur out the other projects when one is active */
+body.blur-active .project:not(.active) {
+  filter: blur(4px);
+  opacity: 0.6;
+  transform: scale(0.98);
+}
+
+    .project img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.project img:hover {
+  transform: scale(1.05); /* slightly enlarge */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* subtle shadow */
+}
+
+    .project img {
+  width: 100%;
+  border-radius: 12px;
+  
+  
+  
+}
+
+
+    .button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #FFAAAA, #96A9FF);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #FFAAAA, #96A9FF);
+  transform: translateY(-2px);
+}
+
     body {
       margin: 0;
-      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      font-family: "Poppins", sans-serif;
       background-color: #f4f5f7;
-      color: #222;
+      color: #3F3F3F;
       line-height: 1.6;
       /* Fade-in animation for page load */
 body {
@@ -19,6 +100,7 @@ body {
 
 body.fade-in {
   opacity: 1;
+  
 }
 
     }
@@ -51,10 +133,11 @@ body.fade-in {
 
     /* HERO SECTION */
     .hero {
-      max-width: 1250px;
-      margin: 120px auto;
-      padding: 0 20px;
-    }
+  max-width: 1250px;
+  margin: 150px auto 280px; /* increased top and bottom spacing */
+  padding: 0 20px;
+}
+
     .hero h1 {
       font-size: 4rem;
       font-weight: 600;
@@ -118,7 +201,7 @@ body.fade-in {
     /* CONTACT SECTION */
     .contact {
       max-width: 1250px;
-      margin: 120px auto;
+      margin: 100px auto 25px;
       text-align: left;
       padding: 0 20px;
     }
@@ -134,7 +217,7 @@ body.fade-in {
       display: inline-block;
       padding: 12px 24px;
       border-radius: 30px;
-      background-color: #222;
+      background-color: #3F3F3F;;
       color: #fff;
       text-decoration: none;
       font-weight: 600;
@@ -142,20 +225,20 @@ body.fade-in {
 
     /* FOOTER */
     footer {
-      max-width: 1100px;
+      max-width: 1250px;
       margin: 60px auto 40px;
       padding: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-top: 1px solid #ccc;
-      color: #555;
+      color: #3F3F3F;
       font-size: 0.95rem;
     }
     footer nav a {
       margin-right: 30px;
       text-decoration: none;
-      color: #555;
+      color: #3F3F3F;
     }
 
     /* RESPONSIVE */
@@ -191,48 +274,53 @@ body.fade-in {
 </header>
 
   <section class="hero">
-    <h1>Hey there!</h1>
-    <p>I’m Brady, a second-year Digital Design student currently studying at <B>Ulster University in Belfast.</B>I’m passionate about crafting fluent and engaging user experiences that focus on meaningful, accessible interactions. My aim is to design with impact, creating solutions that consider all users, especially those who may face everyday challenges.</p>
+    <h1>Hi, I'm Brady!</h1>
+    <p>A second year Digital Design student currently studying at <B>Ulster University in Belfast.</B> I’m passionate about crafting fluent and engaging user experiences that focus on meaningful, accessible interactions. My aim is to design with impact, creating solutions that consider all users, especially those who may face everyday challenges.</p>
+  <a href="#projects" class="scroll-button">View My Work</a>
   </section>
 
-  <section class="projects">
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1200" alt="Project mockup 1" />
+  <section class="projects" id="projects">
+    <div class="project" id="Pathway navigation app"> 
+      <img src="images/smartwatch.png" alt="Smartwatch project" />
       <div class="project-text">
-        <h3>WheelNav</h3>
-        <p>A smartwatch navigation app designed to assist wheelchair users in safer and more efficient travel routes.</p>
+        <h3>Pathway navigation app</h3>
+        <p>A smartwatch app that helps wheelchair users navigate daily life with greater independence, safety, and accessibility through thoughtful, user-centred design.</p>
+      <a href="smartwatch.html#Pathway navigation app" class="button">View More</a>
       </div>
     </div>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1587613755200-8c1d1cc7da3a?q=80&w=1200" alt="Project mockup 2" />
+    <div class="project" id="Square banking app">
+      <img src="images/banking app.png" alt="Project mockup 2" />
       <div class="project-text">
-        <h3>Motion Studio</h3>
-        <p>An experimental interface focused on motion design principles to enhance engagement in digital storytelling.</p>
+        <h3>Square banking app</h3>
+        <p>A banking app that makes managing money simple and accessible for a younger audience. Designed with clarity, ease, and modern interaction in mind.</p>
+      <a href="bankingapp.html#Square banking app" class="button">View More</a>
       </div>
     </div>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1200" alt="Project mockup 3" />
+    <div class="project" id="BopBot music player">
+      <img src="images/music app.png" alt="Project mockup 3" />
       <div class="project-text">
-        <h3>Flow Design</h3>
-        <p>A conceptual redesign project exploring minimal user flows and rapid usability testing processes.</p>
+        <h3>BopBot music player</h3>
+        <p>A music player app that combines a clean, classic design with fun, interactive features. Created for users who want an enjoyable and seamless way to listen on the go.</p>
+      <a href="musicapp.html#BopBot music player" class="button">View More</a>
       </div>
     </div>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200" alt="Project mockup 4" />
+    <div class="project" id="Performance dashboard">
+      <img src="images/performance dashboard.png" alt="Project mockup 4" />
       <div class="project-text">
-        <h3>Brand Refresh</h3>
-        <p>Identity and brand direction update for a small creative agency, focusing on modular visual systems.</p>
+        <h3>Performance dashboard</h3>
+        <p>A sports performance dashboard that tracks and displays athletes’ current and past fitness data. Designed to support progress monitoring and motivate users throughout their sporting journey.</p>
+      <a href="dashboard.html#Performance dashboard" class="button">View More</a>
       </div>
     </div>
   </section>
 
   <section class="contact">
     <span>👋 Get in touch at</span>
-    <h2>brady.design@email.com</h2>
-    <a href="mailto:brady.design@email.com" class="button">Contact Me</a>
+    <h2>Chambeb02@gmail.com</h2>
+    <a href="mailto:chambeb02@gmail.com" class="button">Contact Me</a>
   </section>
 
   <footer>
@@ -263,5 +351,61 @@ body.fade-in {
     });
   });
 </script>
+<script>
+  const projects = document.querySelectorAll('.project');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Remove 'active' from all
+        projects.forEach(p => p.classList.remove('active'));
+        // Add 'active' to the one in view
+        entry.target.classList.add('active');
+        // Blur others
+        document.body.classList.add('blur-active');
+      }
+    });
+  }, { threshold: 0.5 }); // triggers when 50% is visible
+
+  projects.forEach(project => observer.observe(project));
+
+  // Remove blur when near top of page
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < 100) {
+      document.body.classList.remove('blur-active');
+      projects.forEach(p => p.classList.remove('active'));
+    }
+  });
+</script>
+<script>
+  // Custom slower smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+
+      const start = window.scrollY;
+      const end = target.offsetTop;
+      const duration = 2300; // scroll duration in ms (1000 = 1 second)
+      const startTime = performance.now();
+
+      function scrollAnimation(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = progress < 0.5
+          ? 4 * progress * progress * progress
+          : (progress - 1) * (2 * progress - 2) * (2 * progress - 2) + 1;
+
+        window.scrollTo(0, start + (end - start) * ease);
+
+        if (elapsed < duration) requestAnimationFrame(scrollAnimation);
+      }
+
+      requestAnimationFrame(scrollAnimation);
+    });
+  });
+</script>
+
 </body>
 </html>
